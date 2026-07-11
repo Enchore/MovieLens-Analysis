@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+*.egg
+
+# 虛擬環境
+venv/
+.venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 數據集（較大，不納入版本控制）
+data/ml-1m/
+data/ml-25m/
+data/ml-latest/
+
+# 操作系統
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 日誌
+*.log
+
+# 視覺化輸出
+output/
+charts/
+*.png
+*.jpg
