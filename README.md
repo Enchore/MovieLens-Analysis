@@ -1,5 +1,8 @@
 # MovieLens 影片評分數據分析系統
 
+[![CI](https://github.com/Enchore/MovieLens-Analysis/actions/workflows/ci.yml/badge.svg)](https://github.com/Enchore/MovieLens-Analysis/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+
 > MovieLens 影片評分數據分析系統 | Movie Rating Data Analysis System
 
 ## 項目簡介
