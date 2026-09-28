@@ -75,6 +75,40 @@ pip install -r requirements.txt
 python -m gui.main_window
 ```
 
+## 當前狀態
+
+三個分析模組（`analysis/`）已完整實作，可直接用 Python 呼叫。
+
+**Tkinter GUI 目前僅是骨架**，尚未接線：
+
+- `gui/main_window.py` 能啟動視窗，但三個分析按鈕（`_run_time_series`、
+  `_run_correlation`、`_run_distribution`）只更新狀態列文字，不會呼叫分析模組
+- Matplotlib 圖表嵌入未完成
+- 載入資料的檔案對話框未完成
+
+因此請直接呼叫分析模組：
+
+```python
+from utils.data_loader import DataLoader
+from analysis.time_series.trend_analysis import TrendAnalysis
+from analysis.correlation.correlation_analysis import CorrelationAnalysis
+from analysis.distribution.distribution_analysis import DistributionAnalysis
+
+ratings, movies, users = DataLoader("data").load_all()
+
+trend = TrendAnalysis(ratings)
+print(trend.rating_count_trend())
+trend.plot_rating_trend("output/trend.png")
+
+corr = CorrelationAnalysis(ratings, movies)
+print(corr.year_rating_correlation())
+
+dist = DistributionAnalysis(ratings, movies)
+print(dist.rating_level_distribution())
+```
+
+執行前需先按下一節說明下載資料集到 `data/` 目錄，並確認 `output/` 存在。
+
 ## 數據集
 
 本項目使用 [MovieLens](https://grouplens.org/datasets/movielens/) 數據集。
